@@ -17,12 +17,11 @@ fetch('data.json')
   .then(data => {	
       allProducts = data.products
       initialProducts = data.products  
-  	printCards(allProducts)
+  	  printCards(allProducts)
   });
 
 const data =  fetch('data.json')
 .then(response => response.json())
-
 
 
 const printCards = (data) => {
@@ -50,11 +49,7 @@ products.addEventListener("click", e =>{
 const addToCart = (e, data) =>{
     
     if(e.target.classList.contains("btn-primary") && e.target.parentElement.querySelectorAll('p')[1].textContent > 0  ){
-        setCart(e.target.parentElement)
-        console.log("this is the data")
-        console.log(data)
-        console.log( e.srcElement.id)
-        console.log(data.filter(product =>  product.id == e.srcElement.id))
+        setCart(e.target.parentElement)        
         const stockValue = --data.filter(product => product.id == e.srcElement.id)[0].stock         
         e.target.parentElement.querySelectorAll('p')[1].textContent = stockValue
         
@@ -88,11 +83,11 @@ const printCart = () =>{
         templateCart.querySelectorAll("td")[0].textContent = product.name
         templateCart.querySelectorAll("td")[1].textContent = product.stock
         templateCart.querySelectorAll("td")[2].textContent = product.amount
-        templateCart.querySelectorAll("td")[3].textContent = product.price
+        templateCart.querySelectorAll("span")[0].textContent = product.price
         templateCart.querySelector(".btn-info").dataset.id = product.id
         templateCart.querySelector(".btn-danger").dataset.id = product.id
-        templateCart.querySelector("span").textContent = product.amount * product.price 
-
+        templateCart.querySelectorAll("span")[1].textContent = product.amount * product.price 
+        
         const clone = templateCart.cloneNode(true)
         fragment.appendChild(clone)
     })
@@ -121,8 +116,7 @@ const printFooter = () =>{
         console.log("Objecto Json con la order: ")
         console.log(JSON.stringify({totalPrice: xPrice, products : cart } ))
         })
-    }
- 
+    } 
 
 items.addEventListener("click", e =>{
     btnAction(e, allProducts)
@@ -145,18 +139,11 @@ const btnAction = (e, data) =>{
     }
     if(e.target.classList.contains("btn-danger")){
         const product = cart[e.target.dataset.id]
-        product.amount--  
-        console.log("take product out")
-        console.log(data)
-        const stockValue = ++data.filter(product => product.id == e.target.dataset.id)[0].stock
-        console.log(stockValue )
-        console.log(e.target.dataset.id)
-        document.getElementById(e.target.dataset.id+"_"+"stock id").textContent = stockValue 
-        console.log(data)      
-        console.log(cart)      
+        product.amount--         
+        const stockValue = ++data.filter(product => product.id == e.target.dataset.id)[0].stock      
+        document.getElementById(e.target.dataset.id+"_"+"stock id").textContent = stockValue      
         if(product.amount === 0){
-            delete cart[e.target.dataset.id]
-            console.log(cart) 
+            delete cart[e.target.dataset.id]             
         }
         
         printCart()
