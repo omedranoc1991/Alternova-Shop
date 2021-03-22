@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alternova Shop</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+</head>
+<body>
+    
+   <div class="container ">
+        <div class="d-flex justify-content-center">
+            <img  width="400" height="70" src="alternova.png">
+            <p class="text-right mt-auto p-2">🛒</p>
+        </div>        
+        <hr>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Item</th>
+                <th scope="col">stock</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Price</th>
+                <th scope="col">Action</th>
+                <th scope="col">Total</th>
+              </tr>
+            </thead>
+            <tbody id="items"></tbody>
+            <tfoot>
+              <tr id="footer">
+                <th scope="row" colspan="5">Empty cart, lets to buy !</th>
+              </tr>
+            </tfoot>
+        </table>
+        <div class="row" id="products"></div>
+        <br>
+   </div>
+
+   <!--Plantilla para producto -->
+   <template id="template-card">
+       <div class="col-12 col-sm-4 col-md-3">
+           <div class="card text-center">
+               <img src="" alt="" class="card-img-top">
+               <div class="card-body">
+                    <h5 class="card-title text-dark text-center">Name</h5>
+                    <p class="text-center"> $ <span>price</span>  </p> 
+                    <p class="text-center text-secondary "> units </p>                                       
+                    <button class="btn btn-primary btn-sm ">Add to cart</button>                                                     
+               </div>
+           </div>
+       </div>
+   </template>
+
+   <!--Plantilla para footer-->
+   <template id="template-footer">
+        <th scope="row" colspan="2">Total products</th>
+        <td></td>
+        <td>10</td>
+        <td></td>        
+        <td>
+            <button class="btn btn-success btn-sm" id="empty-cart">
+                Create order
+            </button>
+        </td>
+        <td class="font-weight-bold">$ <span>5000</span></td>
+    </template>
+
+    <!--Plantilla para carrito -->
+    <template id="template-cart">
+        <tr>
+            <th scope="row">id</th>
+            <td>redbull</td>
+            <td>1</td>
+            <td>5000</td>
+            <td>2</td>
+            <td>
+                <button class="btn btn-info btn-sm">
+                    +
+                </button>
+                <button class="btn btn-danger btn-sm">
+                    -
+                </button>
+            </td>
+            <td>$ <span>500</span></td>
+        </tr>
+    </template>
+
+   <!--Conexion con el archivo app.js -->
+   <script src="app.js"></script>   
+</body>
+</html>

@@ -1,0 +1,66 @@
+{
+    "products": [
+        {
+            "id":1,
+            "name": "redbull",
+            "unit_price": 5000,
+            "stock": 5,
+            "img": "./red-bull.jpg"
+        },
+        {
+            "id":2,
+            "name": "rice",
+            "unit_price": 2000,
+            "stock": 0,
+            "img": "./rice.jpg"
+        },
+        {
+            "id":3,
+            "name": "papitas de limón margarita",
+            "unit_price": 1500,
+            "stock": 1,
+            "img": "./margarita.jpg"
+        },
+        {
+            "id":4,
+            "name": "meat / pound",
+            "unit_price": 5000,
+            "stock": 8,
+            "img": "./meat.jpg"
+        },{
+            "id":5,
+            "name": "papitas de limón margarita",
+            "unit_price": 1500,
+            "stock": 1,
+            "img": "./margarita.jpg"
+        },
+        {
+            "id":6,
+            "name": "rice",
+            "unit_price": 2000,
+            "stock": 0,
+            "img": "./rice.jpg"
+        },
+        {
+            "id":7,
+            "name": "papitas de limón margarita",
+            "unit_price": 1500,
+            "stock": 1,
+            "img": "./margarita.jpg"
+        },
+        {
+            "id":8,
+            "name": "meat / pound",
+            "unit_price": 5000,
+            "stock": 8,
+            "img": "./meat.jpg"
+        },
+        {
+            "id":9,
+            "name": "rice",
+            "unit_price": 2000,
+            "stock": 0,
+            "img": "./rice.jpg"
+        }
+    ]
+}
